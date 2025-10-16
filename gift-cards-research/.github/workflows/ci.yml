@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  import-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r lambda/requirements.txt
+      - run: python - <<'PY'
+import importlib
+for m in ["lambda.auth", "lambda.fetch", "lambda.handler"]:
+    importlib.import_module(m)
+print("Imports OK")
+PY
