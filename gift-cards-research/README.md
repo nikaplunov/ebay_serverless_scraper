@@ -1,4 +1,4 @@
-# Gift Cards Research — Lambda & DB Connector (Public Skeleton)
+# Lambda & DB Connector - *Based on my gift cards research 
 
 > Here you find the AWS Lambda function and database connectivity only.  
 > **SQL — (in progress):** schema/migrations will be added later.
